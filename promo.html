@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEBONEDAY - Website Satu Hari Jadi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      font-family: 'Nunito', sans-serif;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-20px) translateX(10px); }
+    }
+    
+    @keyframes sway {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.5); }
+      50% { box-shadow: 0 0 40px rgba(239, 68, 68, 0.8); }
+    }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+    
+    .cloud-1 { animation: float 8s ease-in-out infinite; }
+    .cloud-2 { animation: float 10s ease-in-out infinite; }
+    .cloud-3 { animation: float 12s ease-in-out infinite; }
+    .cloud-4 { animation: float 9s ease-in-out infinite 2s; }
+    
+    .grass-sway { animation: sway 3s ease-in-out infinite; transform-origin: bottom; }
+    
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    
+    .btn-hover {
+      transition: all 0.2s ease;
+    }
+    
+    .btn-hover:hover {
+      transform: scale(1.05);
+    }
+    
+    .glow-pulse {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+    
+    .gradient-shift {
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+    
+    .sparkle {
+      animation: sparkle 2s ease-in-out infinite;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full overflow-auto bg-white">
+  <div id="app-wrapper" class="w-full h-full"><!-- HERO SECTION -->
+   <section class="relative overflow-hidden" style="background: linear-gradient(180deg, #87CEEB 0%, #B4E4FF 30%, #FFE4B5 70%, #FFDAB9 100%); min-height: 100%;"><!-- Floating Clouds -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+     <svg class="cloud-1 absolute top-10 left-10 w-32 h-20 opacity-90" viewbox="0 0 200 100"><ellipse cx="60" cy="60" rx="50" ry="30" fill="white" /> <ellipse cx="100" cy="50" rx="60" ry="35" fill="white" /> <ellipse cx="150" cy="60" rx="45" ry="28" fill="white" />
+     </svg>
+     <svg class="cloud-2 absolute top-20 right-20 w-40 h-24 opacity-80" viewbox="0 0 200 100"><ellipse cx="50" cy="55" rx="40" ry="25" fill="white" /> <ellipse cx="100" cy="45" rx="55" ry="32" fill="white" /> <ellipse cx="160" cy="55" rx="35" ry="22" fill="white" />
+     </svg>
+     <svg class="cloud-3 absolute top-40 left-1/4 w-28 h-16 opacity-70" viewbox="0 0 200 100"><ellipse cx="70" cy="55" rx="45" ry="28" fill="white" /> <ellipse cx="130" cy="50" rx="50" ry="30" fill="white" />
+     </svg>
+     <svg class="cloud-4 absolute top-16 right-1/3 w-24 h-14 opacity-85" viewbox="0 0 200 100"><ellipse cx="60" cy="55" rx="40" ry="25" fill="white" /> <ellipse cx="120" cy="50" rx="45" ry="28" fill="white" />
+     </svg>
+    </div><!-- Hero Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center px-4 py-16 md:py-24"><!-- Logo & Title -->
+     <div class="text-center mb-8">
+      <div class="inline-block mb-4">
+       <svg class="w-24 h-24 md:w-32 md:h-32 mx-auto" viewbox="0 0 120 120"><rect x="25" y="50" width="70" height="55" rx="4" fill="#FEF3C7" /> <rect x="25" y="50" width="70" height="55" rx="4" stroke="#D97706" stroke-width="2" fill="none" /> <path d="M15 55 L60 15 L105 55" fill="#F59E0B" stroke="#D97706" stroke-width="2" /> <circle cx="60" cy="35" r="8" fill="#FEF3C7" stroke="#D97706" stroke-width="2" /> <rect x="50" y="70" width="20" height="35" rx="2" fill="#7C3AED" /> <circle cx="65" cy="88" r="2" fill="#FCD34D" /> <rect x="32" y="62" width="14" height="14" rx="2" fill="#93C5FD" stroke="#D97706" stroke-width="1" /> <rect x="74" y="62" width="14" height="14" rx="2" fill="#93C5FD" stroke="#D97706" stroke-width="1" /> <line x1="39" y1="62" x2="39" y2="76" stroke="#D97706" stroke-width="1" /> <line x1="32" y1="69" x2="46" y2="69" stroke="#D97706" stroke-width="1" /> <line x1="81" y1="62" x2="81" y2="76" stroke="#D97706" stroke-width="1" /> <line x1="74" y1="69" x2="88" y2="69" stroke="#D97706" stroke-width="1" /> <rect x="80" y="25" width="12" height="20" fill="#FEF3C7" stroke="#D97706" stroke-width="2" />
+       </svg>
+      </div>
+      <h1 id="main-title" class="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-orange-500 to-rose-500 drop-shadow-lg mb-2">WEBONEDAY</h1>
+      <p id="tagline" class="text-xl md:text-2xl font-bold text-amber-800 tracking-wide mb-3">Website Satu Hari Jadi</p>
+      <p id="hero_subtitle" class="text-sm md:text-lg text-amber-700 max-w-xl mx-auto mb-6">Desain cantik + domain + hosting + support 24/7 ✨</p>
+      <div class="flex justify-center gap-2 mt-4">
+       <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+       <div class="w-2 h-2 bg-sky-500 rounded-full"></div>
+       <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+       <div class="w-2 h-2 bg-rose-500 rounded-full"></div>
+      </div>
+     </div><!-- CTA Buttons -->
+     <div class="flex flex-col sm:flex-row gap-4 mt-8"><a href="#pricing" class="btn-hover px-8 py-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-lg rounded-full shadow-lg flex items-center gap-2 justify-center"> <span>💼 Lihat Paket Layanan</span> </a> <a href="#addons" class="btn-hover px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold text-lg rounded-full shadow-lg flex items-center gap-2 justify-center"> <span>✨ Layanan Tambahan</span> </a>
+     </div>
+     <div class="mt-16 animate-bounce">
+      <svg class="w-8 h-8 text-amber-700" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+     </div>
+    </div>
+   </section><!-- PRICING SECTION -->
+   <section id="pricing" class="relative py-16 md:py-24 px-4" style="background: linear-gradient(180deg, #FFDAB9 0%, #FFF8DC 50%, #F0FFF0 100%);">
+    <div class="text-center mb-12">
+     <h2 id="pricing-title" class="text-3xl md:text-4xl font-black text-amber-800 mb-2">Pilih Paket Website Anda</h2>
+     <p id="pricing_subtitle" class="text-amber-700 text-lg max-w-2xl mx-auto">Semua paket sudah termasuk domain, hosting, dan support 24/7 🚀</p>
+    </div>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><!-- STARTER Package -->
+     <div class="card-hover bg-white/90 backdrop-blur-sm rounded-3xl p-6 border-4 border-emerald-400 shadow-xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-20 h-20 bg-emerald-100 rounded-bl-full"></div>
+      <div class="relative z-10 mb-4">
+       <svg class="w-16 h-16 mx-auto" viewbox="0 0 80 80"><circle cx="40" cy="40" r="35" fill="#D1FAE5" /> <rect x="25" y="30" width="30" height="25" rx="3" fill="#10B981" /> <rect x="28" y="33" width="24" height="15" rx="2" fill="#ECFDF5" /> <circle cx="40" cy="40" r="4" fill="#059669" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-black text-emerald-700 text-center mb-2">STARTER</h3>
+      <p class="text-4xl font-black text-emerald-600 text-center mb-1">Rp 500.000</p>
+      <p class="text-sm text-emerald-500 text-center mb-6">Landing page profesional</p>
+      <ul class="space-y-3 mb-6">
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-emerald-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>1 Halaman Landing Page</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-emerald-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Desain Responsif</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-emerald-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Form Kontak</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-emerald-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Hosting 1 Tahun</span></li>
+      </ul><button onclick="openWhatsApp('STARTER - Rp 500.000')" class="btn-hover block w-full py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-bold text-center rounded-full hover:from-emerald-600 hover:to-emerald-700 transition-all shadow-lg"> Pilih Paket </button>
+     </div><!-- BUSINESS Package -->
+     <div class="card-hover bg-white/90 backdrop-blur-sm rounded-3xl p-6 border-4 border-sky-400 shadow-xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-20 h-20 bg-sky-100 rounded-bl-full"></div>
+      <div class="relative z-10 mb-4">
+       <svg class="w-16 h-16 mx-auto" viewbox="0 0 80 80"><circle cx="40" cy="40" r="35" fill="#DBEAFE" /> <rect x="20" y="25" width="40" height="30" rx="4" fill="#3B82F6" /> <rect x="24" y="29" width="32" height="18" rx="2" fill="#EFF6FF" /> <rect x="28" y="50" width="8" height="8" rx="1" fill="#60A5FA" /> <rect x="44" y="50" width="8" height="8" rx="1" fill="#60A5FA" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-black text-sky-700 text-center mb-2">BUSINESS</h3>
+      <p class="text-4xl font-black text-sky-600 text-center mb-1">Rp 1.500.000</p>
+      <p class="text-sm text-sky-500 text-center mb-6">Untuk bisnis yang berkembang</p>
+      <ul class="space-y-3 mb-6">
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-sky-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>5 Halaman Website</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-sky-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>SEO Dasar</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-sky-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Integrasi WhatsApp</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-sky-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Domain + Hosting 1 Tahun</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-sky-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Revisi 2x</span></li>
+      </ul><button onclick="openWhatsApp('BUSINESS - Rp 1.500.000')" class="btn-hover block w-full py-3 bg-gradient-to-r from-sky-500 to-sky-600 text-white font-bold text-center rounded-full hover:from-sky-600 hover:to-sky-700 transition-all shadow-lg"> Pilih Paket </button>
+     </div><!-- PROFESSIONAL Package (POPULAR) -->
+     <div class="card-hover bg-white/95 backdrop-blur-sm rounded-3xl p-6 border-4 border-amber-400 shadow-2xl relative overflow-hidden transform scale-105 z-10">
+      <div class="absolute -top-1 left-1/2 -translate-x-1/2 px-6 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold text-sm rounded-b-xl shadow-lg">
+       ⭐ POPULER
+      </div>
+      <div class="absolute top-0 right-0 w-24 h-24 bg-amber-100 rounded-bl-full"></div>
+      <div class="relative z-10 mb-4 mt-4">
+       <svg class="w-16 h-16 mx-auto" viewbox="0 0 80 80"><circle cx="40" cy="40" r="35" fill="#FEF3C7" /> <polygon points="40,10 50,35 75,35 55,50 62,75 40,60 18,75 25,50 5,35 30,35" fill="#F59E0B" /> <circle cx="40" cy="42" r="12" fill="#FEF3C7" /> <text x="40" y="47" text-anchor="middle" fill="#D97706" font-size="14" font-weight="bold">
+         PRO
+        </text>
+       </svg>
+      </div>
+      <h3 class="text-2xl font-black text-amber-700 text-center mb-2">PROFESSIONAL</h3>
+      <p class="text-4xl font-black text-amber-600 text-center mb-1">Rp 2.500.000</p>
+      <p class="text-sm text-amber-500 text-center mb-6">Fitur lengkap untuk bisnis</p>
+      <ul class="space-y-3 mb-6">
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-amber-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>10 Halaman Website</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-amber-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>SEO Lengkap</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-amber-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Blog/Artikel</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-amber-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Google Analytics</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-amber-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>SSL Certificate</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-amber-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Revisi 5x</span></li>
+      </ul><button onclick="openWhatsApp('PROFESSIONAL - Rp 2.500.000')" class="btn-hover block w-full py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold text-center rounded-full hover:from-amber-600 hover:to-orange-600 transition-all shadow-lg"> Pilih Paket </button>
+     </div><!-- PREMIUM Package -->
+     <div class="card-hover bg-white/90 backdrop-blur-sm rounded-3xl p-6 border-4 border-rose-400 shadow-xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-20 h-20 bg-rose-100 rounded-bl-full"></div>
+      <div class="relative z-10 mb-4">
+       <svg class="w-16 h-16 mx-auto" viewbox="0 0 80 80"><circle cx="40" cy="40" r="35" fill="#FCE7F3" /> <rect x="15" y="35" width="50" height="30" rx="4" fill="#EC4899" /> <rect x="20" y="25" width="40" height="15" rx="3" fill="#F472B6" /> <rect x="25" y="18" width="30" height="12" rx="2" fill="#F9A8D4" /> <rect x="25" y="40" width="10" height="20" rx="1" fill="#FDF2F8" /> <rect x="45" y="40" width="10" height="20" rx="1" fill="#FDF2F8" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-black text-rose-700 text-center mb-2">PREMIUM</h3>
+      <p class="text-4xl font-black text-rose-600 text-center mb-1">Rp 4.000.000</p>
+      <p class="text-sm text-rose-500 text-center mb-6">E-commerce dan fitur utama</p>
+      <ul class="space-y-3 mb-6">
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Unlimited Halaman</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>E-Commerce Ready</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Payment Gateway</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Admin Dashboard</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Support 30 Hari</span></li>
+       <li class="flex items-center gap-2 text-gray-700 text-sm">
+        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Revisi Unlimited</span></li>
+      </ul><button onclick="openWhatsApp('PREMIUM - Rp 4.000.000')" class="btn-hover block w-full py-3 bg-gradient-to-r from-rose-500 to-pink-500 text-white font-bold text-center rounded-full hover:from-rose-600 hover:to-pink-600 transition-all shadow-lg"> Pilih Paket </button>
+     </div>
+    </div>
+   </section><!-- ADD-ONS SECTION -->
+   <section id="addons" class="relative py-16 md:py-24 px-4 overflow-hidden" style="background: linear-gradient(135deg, #FEF3C7 0%, #FFEDD5 50%, #FED7AA 100%);">
+    <div class="relative z-10 text-center mb-12">
+     <h2 id="addons-title" class="text-3xl md:text-4xl font-black text-orange-800 mb-2">Layanan Tambahan</h2>
+     <p id="addons_subtitle" class="text-orange-700 text-lg max-w-2xl mx-auto">Tingkatkan website kamu dengan add-ons profesional 💎</p>
+    </div>
+    <div class="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"><!-- Tambah Halaman -->
+     <div class="card-hover bg-white rounded-2xl p-6 border-2 border-emerald-300 shadow-lg">
+      <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
+       <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-bold text-gray-800 mb-2">Tambah Halaman</h3>
+      <p class="text-2xl font-black text-emerald-600 mb-4">Rp 50.000</p>
+      <ul class="space-y-2 text-sm text-gray-700 mb-4">
+       <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span><span>1 halaman baru custom</span></li>
+       <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span><span>Desain sesuai tema existing</span></li>
+       <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span><span>Mobile responsive + revisi 1x</span></li>
+      </ul><button onclick="openWhatsApp('Add-ons: Tambah Halaman - Rp 50.000')" class="btn-hover w-full py-2 bg-emerald-500 text-white font-bold rounded-lg hover:bg-emerald-600">Pesan</button>
+     </div><!-- SEO Terindeks Google -->
+     <div class="card-hover bg-white rounded-2xl p-6 border-2 border-sky-300 shadow-lg">
+      <div class="w-14 h-14 bg-sky-100 rounded-xl flex items-center justify-center mb-4">
+       <svg class="w-8 h-8 text-sky-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-bold text-gray-800 mb-2">SEO Terindeks Google</h3>
+      <p class="text-2xl font-black text-sky-600 mb-4">Rp 100.000</p>
+      <ul class="space-y-2 text-sm text-gray-700 mb-4">
+       <li class="flex items-start gap-2"><span class="text-sky-500 font-bold mt-0.5">✓</span><span>Optimasi on-page lengkap</span></li>
+       <li class="flex items-start gap-2"><span class="text-sky-500 font-bold mt-0.5">✓</span><span>Submit Google Search Console</span></li>
+       <li class="flex items-start gap-2"><span class="text-sky-500 font-bold mt-0.5">✓</span><span>Terindeks dalam 1-2 minggu</span></li>
+      </ul><button onclick="openWhatsApp('Add-ons: SEO Terindeks Google - Rp 100.000')" class="btn-hover w-full py-2 bg-sky-500 text-white font-bold rounded-lg hover:bg-sky-600">Pesan</button>
+     </div><!-- Toko Online + Payment -->
+     <div class="card-hover bg-white rounded-2xl p-6 border-2 border-purple-300 shadow-lg">
+      <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+       <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-bold text-gray-800 mb-2">Toko Online + Payment</h3>
+      <p class="text-2xl font-black text-purple-600 mb-4">Rp 25.000</p>
+      <ul class="space-y-2 text-sm text-gray-700 mb-4">
+       <li class="flex items-start gap-2"><span class="text-purple-500 font-bold mt-0.5">✓</span><span>Integrasi payment gateway</span></li>
+       <li class="flex items-start gap-2"><span class="text-purple-500 font-bold mt-0.5">✓</span><span>Cart + checkout otomatis</span></li>
+       <li class="flex items-start gap-2"><span class="text-purple-500 font-bold mt-0.5">✓</span><span>Max 10 produk awal</span></li>
+      </ul><button onclick="openWhatsApp('Add-ons: Toko Online + Payment - Rp 25.000')" class="btn-hover w-full py-2 bg-purple-500 text-white font-bold rounded-lg hover:bg-purple-600">Pesan</button>
+     </div><!-- Domain 1 Tahun -->
+     <div class="card-hover bg-white rounded-2xl p-6 border-2 border-amber-300 shadow-lg">
+      <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+       <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-bold text-gray-800 mb-2">Domain 1 Tahun</h3>
+      <p class="text-sm text-gray-600 mb-3"><span class="font-black text-amber-600">.xyz:</span> <span class="font-bold">Rp 25K</span> | <span class="font-black text-amber-600">.com:</span> <span class="font-bold">Rp 150K</span></p>
+      <ul class="space-y-2 text-sm text-gray-700 mb-4">
+       <li class="flex items-start gap-2"><span class="text-amber-500 font-bold mt-0.5">✓</span><span>Terlihat profesional &amp; mudah diakses</span></li>
+       <li class="flex items-start gap-2"><span class="text-amber-500 font-bold mt-0.5">✓</span><span>Gratis SSL + full control</span></li>
+      </ul><button onclick="openWhatsApp('Add-ons: Domain 1 Tahun')" class="btn-hover w-full py-2 bg-amber-500 text-white font-bold rounded-lg hover:bg-amber-600">Pesan</button>
+     </div><!-- Hosting 1 Tahun -->
+     <div class="card-hover bg-white rounded-2xl p-6 border-2 border-rose-300 shadow-lg">
+      <div class="w-14 h-14 bg-rose-100 rounded-xl flex items-center justify-center mb-4">
+       <svg class="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v5a2 2 0 01-2 2M5 12a2 2 0 00-2 2v5a2 2 0 002 2h14a2 2 0 002-2v-5a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-bold text-gray-800 mb-2">Hosting 1 Tahun</h3>
+      <p class="text-2xl font-black text-rose-600 mb-4">Rp 400.000</p>
+      <ul class="space-y-2 text-sm text-gray-700 mb-4">
+       <li class="flex items-start gap-2"><span class="text-rose-500 font-bold mt-0.5">✓</span><span>Proteksi dari hacker &amp; malware</span></li>
+       <li class="flex items-start gap-2"><span class="text-rose-500 font-bold mt-0.5">⚡</span><span>SSD cepat + unlimited bandwidth</span></li>
+       <li class="flex items-start gap-2"><span class="text-rose-500 font-bold mt-0.5">✓</span><span>cPanel + backup rutin + SSL</span></li>
+      </ul><button onclick="openWhatsApp('Add-ons: Hosting 1 Tahun - Rp 400.000')" class="btn-hover w-full py-2 bg-rose-500 text-white font-bold rounded-lg hover:bg-rose-600">Pesan</button>
+     </div><!-- Livechat AI -->
+     <div class="card-hover bg-white rounded-2xl p-6 border-2 border-cyan-300 shadow-lg">
+      <div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center mb-4">
+       <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-bold text-gray-800 mb-2">Livechat AI</h3>
+      <p class="text-2xl font-black text-cyan-600 mb-4">Rp 50.000</p>
+      <ul class="space-y-2 text-sm text-gray-700 mb-4">
+       <li class="flex items-start gap-2"><span class="text-cyan-500 font-bold mt-0.5">✓</span><span>Chatbot AI otomatis 24/7</span></li>
+       <li class="flex items-start gap-2"><span class="text-cyan-500 font-bold mt-0.5">✓</span><span>Auto-reply pertanyaan umum</span></li>
+       <li class="flex items-start gap-2"><span class="text-cyan-500 font-bold mt-0.5">⚡</span><span>Setup cepat tanpa coding</span></li>
+      </ul><button onclick="openWhatsApp('Add-ons: Livechat AI - Rp 50.000')" class="btn-hover w-full py-2 bg-cyan-500 text-white font-bold rounded-lg hover:bg-cyan-600">Pesan</button>
+     </div>
+    </div>
+    <div class="relative z-10 text-center"><button onclick="openWhatsAppUpgrade()" class="btn-hover inline-block px-10 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-lg rounded-full shadow-xl hover:from-emerald-600 hover:to-teal-600"> 💎 Upgrade Website Saya </button>
+    </div>
+   </section><!-- AI APP BUILDER LIMITED OFFER -->
+   <section id="aibuilder" class="relative px-4 py-12 overflow-hidden" style="background: linear-gradient(135deg, #7C3AED 0%, #DB2777 50%, #7C3AED 100%);"><!-- Decorative Floating Circles -->
+    <div class="absolute top-0 left-0 w-48 h-48 rounded-full opacity-20 blur-3xl" style="background: radial-gradient(circle, #FBBF24 0%, transparent 100%); transform: translate(-50%, -50%);"></div>
+    <div class="absolute bottom-0 right-0 w-64 h-64 rounded-full opacity-20 blur-3xl" style="background: radial-gradient(circle, #FCD34D 0%, transparent 100%); transform: translate(50%, 50%);"></div>
+    <div class="absolute top-32 left-1/3 w-32 h-32 rounded-full opacity-15 blur-2xl" style="background: radial-gradient(circle, #EC4899 0%, transparent 100%);"></div><!-- Sparkle SVG Icons Top -->
+    <svg class="absolute top-16 left-12 w-8 h-8 text-yellow-300 opacity-60 animate-pulse" viewbox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+    </svg>
+    <svg class="absolute top-1/4 right-20 w-8 h-8 text-pink-300 opacity-60 animate-pulse" style="animation-delay: 0.3s;" viewbox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+    </svg><!-- Sparkle SVG Icons Bottom -->
+    <svg class="absolute bottom-20 left-1/4 w-8 h-8 text-yellow-300 opacity-40 animate-pulse" style="animation-delay: 0.6s;" viewbox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+    </svg>
+    <svg class="absolute bottom-32 right-1/4 w-8 h-8 text-pink-300 opacity-40 animate-pulse" style="animation-delay: 0.9s;" viewbox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+    </svg><!-- Main Content Container -->
+    <div class="relative z-10 w-full max-w-7xl mx-auto"><!-- Top Section: Center Title -->
+     <div class="text-center mb-12">
+      <p class="text-base font-bold text-yellow-300 tracking-widest mb-2">🎁 PENAWARAN TERBATAS</p>
+      <h2 class="text-4xl md:text-5xl font-black text-white mb-3">AI App Builder</h2>
+      <p class="text-xl md:text-2xl text-yellow-300 font-bold">Bangun Website &amp; Aplikasi Tanpa Coding 🚀</p>
+     </div><!-- Main Grid Layout: 2 Kolom -->
+     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8"><!-- LEFT COLUMN: Benefits Table -->
+      <div class="relative">
+       <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white border-opacity-20"><!-- Header -->
+        <div class="mb-6 pb-4 border-b border-white border-opacity-20">
+         <h2 class="text-3xl font-extrabold text-yellow-300 mb-2">🎁 Apa Saja Yang Didapat?</h2>
+         <p class="text-base text-white opacity-90">Semua ini bisa kamu kuasai dalam satu paket!</p>
+        </div><!-- Benefits List -->
+        <div class="space-y-0"><!-- Item 1 -->
+         <div class="flex py-3 border-b border-white border-opacity-20 hover:bg-white hover:bg-opacity-5 transition-colors">
+          <div class="flex-shrink-0 mr-3">
+           <p class="text-sm font-bold text-yellow-300 min-w-[24px]">1.</p>
+          </div>
+          <div class="flex-1 pr-3">
+           <p class="text-base font-bold text-white">Akses AI App Builder</p>
+           <p class="text-xs text-white opacity-85">Bangun website dan aplikasi berbasis AI tanpa coding dari nol sampai siap pakai.</p>
+          </div>
+          <div class="flex-shrink-0">
+           <p class="text-base font-bold text-yellow-300 whitespace-nowrap">Rp 999.000</p>
+          </div>
+         </div><!-- Item 2 -->
+         <div class="flex py-3 border-b border-white border-opacity-20 hover:bg-white hover:bg-opacity-5 transition-colors">
+          <div class="flex-shrink-0 mr-3">
+           <p class="text-sm font-bold text-yellow-300 min-w-[24px]">2.</p>
+          </div>
+          <div class="flex-1 pr-3">
+           <p class="text-base font-bold text-white">Bikin Website Unlimited!!!</p>
+           <p class="text-xs text-white opacity-85">Buat website klien atau project pribadi tanpa batas jumlah menggunakan AI.</p>
+          </div>
+          <div class="flex-shrink-0">
+           <p class="text-base font-bold text-yellow-300 whitespace-nowrap">Rp 599.000</p>
+          </div>
+         </div><!-- Item 3 -->
+         <div class="flex py-3 border-b border-white border-opacity-20 hover:bg-white hover:bg-opacity-5 transition-colors">
+          <div class="flex-shrink-0 mr-3">
+           <p class="text-sm font-bold text-yellow-300 min-w-[24px]">3.</p>
+          </div>
+          <div class="flex-1 pr-3">
+           <p class="text-base font-bold text-white">Modul Website Creation with AI</p>
+           <p class="text-xs text-white opacity-85">Panduan step-by-step membangun website profesional hanya dengan prompt AI.</p>
+          </div>
+          <div class="flex-shrink-0">
+           <p class="text-base font-bold text-yellow-300 whitespace-nowrap">Rp 349.000</p>
+          </div>
+         </div><!-- Item 4 -->
+         <div class="flex py-3 border-b border-white border-opacity-20 hover:bg-white hover:bg-opacity-5 transition-colors">
+          <div class="flex-shrink-0 mr-3">
+           <p class="text-sm font-bold text-yellow-300 min-w-[24px]">4.</p>
+          </div>
+          <div class="flex-1 pr-3">
+           <p class="text-base font-bold text-white">AI Website Generator Demo Module</p>
+           <p class="text-xs text-white opacity-85">Demonstrasi real penggunaan AI untuk menghasilkan website dalam hitungan menit.</p>
+          </div>
+          <div class="flex-shrink-0">
+           <p class="text-base font-bold text-yellow-300 whitespace-nowrap">Rp 249.000</p>
+          </div>
+         </div><!-- Item 5 -->
+         <div class="flex py-3 border-b border-white border-opacity-20 hover:bg-white hover:bg-opacity-5 transition-colors">
+          <div class="flex-shrink-0 mr-3">
+           <p class="text-sm font-bold text-yellow-300 min-w-[24px]">5.</p>
+          </div>
+          <div class="flex-1 pr-3">
+           <p class="text-base font-bold text-white">Modul Aplikasi Ojek Online</p>
+           <p class="text-xs text-white opacity-85">Membangun aplikasi ojek online lengkap dengan user, driver, dan sistem order.</p>
+          </div>
+          <div class="flex-shrink-0">
+           <p class="text-base font-bold text-yellow-300 whitespace-nowrap">Rp 599.000</p>
+          </div>
+         </div><!-- Item 6 -->
+         <div class="flex py-3 border-b border-white border-opacity-20 hover:bg-white hover:bg-opacity-5 transition-colors">
+          <div class="flex-shrink-0 mr-3">
+           <p class="text-sm font-bold text-yellow-300 min-w-[24px]">6.</p>
+          </div>
+          <div class="flex-1 pr-3">
+           <p class="text-base font-bold text-white">Modul Aplikasi Layanan Rumah Tangga &amp; Pijat</p>
+           <p class="text-xs text-white opacity-85">Membuat aplikasi booking jasa rumah tangga dan pijat berbasis lokasi dan jadwal.</p>
+          </div>
+          <div class="flex-shrink-0">
+           <p class="text-base font-bold text-yellow-300 whitespace-nowrap">Rp 399.000</p>
+          </div>
+         </div><!-- Item 7 -->
+         <div class="flex py-3 border-b border-white border-opacity-20 hover:bg-white hover:bg-opacity-5 transition-colors">
+          <div class="flex-shrink-0 mr-3">
+           <p class="text-sm font-bold text-yellow-300 min-w-[24px]">7.</p>
+          </div>
+          <div class="flex-1 pr-3">
+           <p class="text-base font-bold text-white">Modul Aplikasi Pulsa, Topup &amp; Digital Product</p>
+           <p class="text-xs text-white opacity-85">Membangun aplikasi transaksi pulsa, paket data, e-wallet, dan topup game.</p>
+          </div>
+          <div class="flex-shrink-0">
+           <p class="text-base font-bold text-yellow-300 whitespace-nowrap">Rp 549.000</p>
+          </div>
+         </div><!-- Item 8 -->
+         <div class="flex py-3 border-b border-white border-opacity-20 hover:bg-white hover:bg-opacity-5 transition-colors">
+          <div class="flex-shrink-0 mr-3">
+           <p class="text-sm font-bold text-yellow-300 min-w-[24px]">8.</p>
+          </div>
+          <div class="flex-1 pr-3">
+           <p class="text-base font-bold text-white">Modul Aplikasi Service Kendaraan</p>
+           <p class="text-xs text-white opacity-85">Membuat aplikasi booking dan manajemen service kendaraan secara digital.</p>
+          </div>
+          <div class="flex-shrink-0">
+           <p class="text-base font-bold text-yellow-300 whitespace-nowrap">Rp 349.000</p>
+          </div>
+         </div><!-- Item 9 -->
+         <div class="flex py-3 border-b border-white border-opacity-20 hover:bg-white hover:bg-opacity-5 transition-colors">
+          <div class="flex-shrink-0 mr-3">
+           <p class="text-sm font-bold text-yellow-300 min-w-[24px]">9.</p>
+          </div>
+          <div class="flex-1 pr-3">
+           <p class="text-base font-bold text-white">Modul Aplikasi Toko Serbaguna</p>
+           <p class="text-xs text-white opacity-85">Membangun aplikasi toko online fleksibel untuk berbagai jenis produk.</p>
+          </div>
+          <div class="flex-shrink-0">
+           <p class="text-base font-bold text-yellow-300 whitespace-nowrap">Rp 299.000</p>
+          </div>
+         </div><!-- Item 10 -->
+         <div class="flex py-3 border-b border-white border-opacity-20 hover:bg-white hover:bg-opacity-5 transition-colors">
+          <div class="flex-shrink-0 mr-3">
+           <p class="text-sm font-bold text-yellow-300 min-w-[24px]">10.</p>
+          </div>
+          <div class="flex-1 pr-3">
+           <p class="text-base font-bold text-white">Modul Strategi Jual Website &amp; Aplikasi</p>
+           <p class="text-xs text-white opacity-85">Strategi pricing, penawaran, dan closing agar skill langsung menghasilkan uang.</p>
+          </div>
+          <div class="flex-shrink-0">
+           <p class="text-base font-bold text-yellow-300 whitespace-nowrap">Rp 399.000</p>
+          </div>
+         </div><!-- Item 11 -->
+         <div class="flex py-3 border-b border-white border-opacity-20 hover:bg-white hover:bg-opacity-5 transition-colors">
+          <div class="flex-shrink-0 mr-3">
+           <p class="text-sm font-bold text-yellow-300 min-w-[24px]">11.</p>
+          </div>
+          <div class="flex-1 pr-3">
+           <p class="text-base font-bold text-white">50+ High-Impact AI Prompt Templates</p>
+           <p class="text-xs text-white opacity-85">Kumpulan prompt siap pakai untuk mempercepat pembuatan website dan aplikasi.</p>
+          </div>
+          <div class="flex-shrink-0">
+           <p class="text-base font-bold text-yellow-300 whitespace-nowrap">Rp 210.000</p>
+          </div>
+         </div>
+        </div><!-- Total Row -->
+        <div class="bg-white bg-opacity-10 rounded-xl px-3 py-3 mt-3 border-t border-white border-opacity-20 flex justify-between items-center">
+         <p class="text-base font-extrabold text-white">TOTAL NILAI PAKET</p>
+         <p class="text-xl font-bold text-yellow-300">Rp 4.999.000</p>
+        </div>
+       </div>
+      </div><!-- RIGHT COLUMN: Video + Countdown + Pricing + CTA -->
+      <div class="relative flex flex-col space-y-6"><!-- Video Demo -->
+       <div class="relative rounded-2xl overflow-hidden shadow-xl border border-white border-opacity-20 bg-black bg-opacity-30 backdrop-blur-sm">
+        <div class="relative w-full" style="aspect-ratio: 16/9;">
+         <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+          <source src="demo.mp4" type="video/mp4">
+         </video>
+         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
+          <svg class="w-28 h-28 text-yellow-300 opacity-90 animate-pulse" fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z" />
+          </svg>
+         </div>
+        </div>
+       </div><!-- Countdown Timer with Urgency -->
+       <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-yellow-300" style="background: linear-gradient(135deg, #DC2626 0%, #EF4444 50%, #FCA5A5 100%);">
+        <div class="absolute inset-0 bg-yellow-300 opacity-20 animate-pulse"></div>
+        <div class="relative p-6 text-center">
+         <p class="text-2xl font-extrabold italic text-white tracking-wide mb-4">⏰ HARGA KEMBALI NORMAL DALAM:</p>
+         <div class="flex justify-center gap-3 font-mono mb-4">
+          <div class="bg-white bg-opacity-25 backdrop-blur-sm rounded-xl px-4 py-3 min-w-[70px] border-2 border-yellow-300 shadow-lg">
+           <div id="offer-days" class="text-3xl font-bold text-yellow-300 drop-shadow-lg">
+            0
+           </div>
+           <p class="text-xs font-bold text-white opacity-90 mt-1">HARI</p>
+          </div>
+          <div class="bg-white bg-opacity-25 backdrop-blur-sm rounded-xl px-4 py-3 min-w-[70px] border-2 border-yellow-300 shadow-lg">
+           <div id="offer-hours" class="text-3xl font-bold text-yellow-300 drop-shadow-lg">
+            1
+           </div>
+           <p class="text-xs font-bold text-white opacity-90 mt-1">JAM</p>
+          </div>
+          <div class="bg-white bg-opacity-25 backdrop-blur-sm rounded-xl px-4 py-3 min-w-[70px] border-2 border-yellow-300 shadow-lg">
+           <div id="offer-minutes" class="text-3xl font-bold text-yellow-300 drop-shadow-lg">
+            0
+           </div>
+           <p class="text-xs font-bold text-white opacity-90 mt-1">MENIT</p>
+          </div>
+          <div class="bg-white bg-opacity-25 backdrop-blur-sm rounded-xl px-4 py-3 min-w-[70px] border-2 border-yellow-300 shadow-lg">
+           <div id="offer-seconds" class="text-3xl font-bold text-yellow-300 drop-shadow-lg">
+            10
+           </div>
+           <p class="text-xs font-bold text-white opacity-90 mt-1">DETIK</p>
+          </div>
+         </div>
+        </div>
+       </div><!-- Pricing Section -->
+       <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white border-opacity-20">
+        <p class="text-center text-yellow-300 font-extrabold text-sm mb-3">Harga Normal</p>
+        <p class="text-center text-3xl font-extrabold text-white line-through opacity-70 mb-6">Rp 4.999.000</p>
+        <div class="bg-gradient-to-r from-yellow-300 to-yellow-400 rounded-xl p-5 mb-6">
+         <p class="text-sm font-bold text-purple-900 mb-1">DISKON 90% HARI INI!</p>
+         <p class="text-5xl font-bold text-purple-900 drop-shadow-lg">Rp 499.900</p>
+        </div>
+        <div class="text-center text-yellow-300 font-bold text-lg mb-6">
+         💎 Hemat Rp 4.499.100 sekarang!
+        </div><button onclick="openPromoLink()" class="w-full py-4 px-8 text-lg rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 font-bold shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 mb-3"> Dapatkan Akses Sekarang 🚀 </button>
+        <p class="text-center text-xs text-white opacity-80">✨ Akses langsung setelah pembayaran</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- FOOTER -->
+   <footer class="relative py-12 px-4" style="background: linear-gradient(180deg, #F0FFF0 0%, #DCFCE7 100%);">
+    <div class="relative z-10 text-center mb-8">
+     <p id="footer-text" class="text-xl md:text-2xl font-bold text-emerald-800 mb-6">Hubungi kami untuk konsultasi gratis</p>
+     <div class="flex justify-center gap-6"><a href="mailto:hello@weboneday.com" class="btn-hover w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-emerald-600 hover:bg-emerald-50">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+       </svg></a> <a href="https://instagram.com/weboneday" target="_blank" rel="noopener noreferrer" class="btn-hover w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center text-rose-500 hover:bg-rose-50">
+       <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+       </svg></a>
+     </div>
+     <p class="mt-8 text-emerald-600 text-sm">© 2024 WEBONEDAY. Made with 💚 in Indonesia</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    function openWhatsApp(packageName) {
+      const message = `Halo kak! 👋 Saya tertarik dengan paket *${packageName}*. Bisa kasih info lengkapnya dong?`;
+      const phoneNumber = '6281234567890';
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappURL, '_blank');
+    }
+    
+    function openWhatsAppUpgrade() {
+      const message = `Halo kak! 👋 Saya mau upgrade website dengan layanan tambahan. Bisa bantu saya dong? 💪`;
+      const phoneNumber = '6281234567890';
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappURL, '_blank');
+    }
+    
+    function openPromoLink() {
+      window.open('https://www.agenticlone.com/promo', '_blank', 'noopener,noreferrer');
+    }
+    
+    function updateOfferCountdown() {
+      const countdownDate = new Date().getTime() + (1 * 60 * 60 * 1000 + 10 * 1000);
+      
+      const timer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+        
+        if (distance < 0) {
+          clearInterval(timer);
+          if (document.getElementById('offer-days')) {
+            document.getElementById('offer-days').textContent = '0';
+            document.getElementById('offer-hours').textContent = '0';
+            document.getElementById('offer-minutes').textContent = '0';
+            document.getElementById('offer-seconds').textContent = '0';
+          }
+          return;
+        }
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        if (document.getElementById('offer-days')) {
+          document.getElementById('offer-days').textContent = String(days).padStart(2, '0');
+          document.getElementById('offer-hours').textContent = String(hours).padStart(2, '0');
+          document.getElementById('offer-minutes').textContent = String(minutes).padStart(2, '0');
+          document.getElementById('offer-seconds').textContent = String(seconds).padStart(2, '0');
+        }
+      }, 1000);
+    }
+    
+    setTimeout(() => {
+      updateOfferCountdown();
+    }, 100);
+    
+    const defaultConfig = {
+      main_title: 'WEBONEDAY',
+      tagline: 'Website Satu Hari Jadi',
+      hero_subtitle: 'Desain cantik + domain + hosting + support 24/7 ✨',
+      pricing_title: 'Pilih Paket Website Anda',
+      pricing_subtitle: 'Semua paket sudah termasuk domain, hosting, dan support 24/7 🚀',
+      addons_title: 'Layanan Tambahan',
+      addons_subtitle: 'Tingkatkan website kamu dengan add-ons profesional 💎',
+      footer_text: 'Hubungi kami untuk konsultasi gratis'
+    };
+    
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          const mainTitle = document.getElementById('main-title');
+          const tagline = document.getElementById('tagline');
+          const heroSubtitle = document.getElementById('hero_subtitle');
+          const pricingTitle = document.getElementById('pricing-title');
+          const pricingSubtitle = document.getElementById('pricing_subtitle');
+          const addonsTitle = document.getElementById('addons-title');
+          const addonsSubtitle = document.getElementById('addons_subtitle');
+          const footerText = document.getElementById('footer-text');
+          
+          if (mainTitle) mainTitle.textContent = config.main_title || defaultConfig.main_title;
+          if (tagline) tagline.textContent = config.tagline || defaultConfig.tagline;
+          if (heroSubtitle) heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+          if (pricingTitle) pricingTitle.textContent = config.pricing_title || defaultConfig.pricing_title;
+          if (pricingSubtitle) pricingSubtitle.textContent = config.pricing_subtitle || defaultConfig.pricing_subtitle;
+          if (addonsTitle) addonsTitle.textContent = config.addons_title || defaultConfig.addons_title;
+          if (addonsSubtitle) addonsSubtitle.textContent = config.addons_subtitle || defaultConfig.addons_subtitle;
+          if (footerText) footerText.textContent = config.footer_text || defaultConfig.footer_text;
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['main_title', config.main_title || defaultConfig.main_title],
+          ['tagline', config.tagline || defaultConfig.tagline],
+          ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+          ['pricing_title', config.pricing_title || defaultConfig.pricing_title],
+          ['pricing_subtitle', config.pricing_subtitle || defaultConfig.pricing_subtitle],
+          ['addons_title', config.addons_title || defaultConfig.addons_title],
+          ['addons_subtitle', config.addons_subtitle || defaultConfig.addons_subtitle],
+          ['footer_text', config.footer_text || defaultConfig.footer_text]
+        ])
+      });
+    }
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d0b3fc9b124696d',t:'MTc3MTU2MTYyMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
